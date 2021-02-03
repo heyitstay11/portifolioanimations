@@ -1,0 +1,448 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    overflow-x: hidden;
+}
+ body{
+     overflow-x: hidden;
+     font-size: 16px;
+     font-family:Arial, Helvetica, sans-serif;
+     background-color: rgb(218, 218, 218);
+     min-height: 100vh;
+    }
+ .intro{
+    position: relative;
+    min-height: 85vh;
+    margin-bottom: 20vh;
+ }
+ nav a{
+     text-decoration: none;
+ }
+ .logo{
+    margin-left:2rem;
+    font-size: 2.6rem;
+    color: white;
+    padding: .4rem;
+    border: 3px solid rgb(126, 255, 255);
+    transform:  skewX(-20deg);
+    transition: all .3s ease-in-out;
+ }
+ .logo:hover{
+    border: 3px solid rgb(255, 191, 255);
+    color:rgb(0, 255, 221);
+    transform: skewX(0deg);
+ }
+ nav{
+    background: linear-gradient(to left, #4b0082 , rgb(200, 145, 255) ) ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .4rem;
+    font-weight: 700;
+}
+nav ul{
+    width: 40%;
+     list-style-type: none;
+     display: flex;
+     justify-content: space-evenly;
+}
+
+nav ul li{
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-right: .8rem;
+}
+nav ul li a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: transform .25s ease-in-out, color .25s ease-in-out;
+}
+nav ul li a:hover{
+    transform: scale(1.2);
+    color:rgb(255, 101, 247);
+}
+.burger{
+    display: none;
+    flex-direction: column;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+.burger > div{
+    height: 2.1px;
+    width: 25px;
+    margin: .15em;
+    background-color: white;
+}
+.mobile-nav{
+    display: none;
+}
+.bg-underlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 200 200'%3E%3Cpolygon fill='%239b40ff' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E");
+}
+.card{
+    position: absolute;
+    left:50%;
+    width: 55vw;
+    top: 25%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    flex: 1;
+    background-color: rgb(0, 86, 161);
+    padding: 1.6rem 2.2rem;
+    border-radius: 1rem;
+    z-index: -1;
+}
+.card > .intro-card{
+   color: rgb(20, 20, 20);
+   width: 50%;
+   align-self: center;
+   display: flex;
+   flex-direction: column;
+}
+.intro-card > .greet{
+    color: white;
+    font-size: 2.6rem;
+    min-height: 2.6rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+}
+.info{
+    color: rgb(236, 236, 236);
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+.infoup, .infodown{
+    display: inline-block;
+}
+.card > img{
+    width: 40%;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding: .3rem;
+    border: 4px solid rgb(184, 184, 184);
+}
+
+.bg-overlay{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    transition: background-color .2s ease-in-out;
+}
+.develop-img:hover > .bg-overlay{
+    background-color: rgb(255, 124, 146, 0.45);
+}
+.design-img:hover > .bg-overlay{
+    background-color: rgba(62, 255, 165, 0.4);
+}
+.teaching-img:hover > .bg-overlay{
+    background-color: rgba(62, 184, 255, 0.4);
+}
+.develop-img{
+    position: relative;
+    height: 90%;
+    width: 40%;
+}
+.highlight{
+    display: inline-block;
+    font-weight: 700;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+}
+.develop-writing > p, .design-writing > p, .teaching-writing > p{
+    line-height: 1.4;
+    font-size: 1.6rem;
+}
+.icons{
+    display: inline-block;
+    font-size: 2.4rem;
+    margin-top: 1.6rem; 
+}
+.teaching-img, .design-img{
+    position: relative;
+    width: 45%;
+    height: 90%;
+}
+.design-img{
+    width: 50%;
+    margin-right:auto;
+}
+.teaching img, .design-img img, .develop-img > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.develop-writing{
+    display: flex;
+    align-items: center;
+    height: 80%;
+    width: 50%;
+}
+.teaching-writing, .design-writing{
+    align-self: center;
+    width: 50%;
+    margin-left: auto;
+}
+.contacts, .teaching , .design, .develop{
+    height: 82vh;
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 2rem;
+    margin-bottom: 15vh;
+}
+.contacts{
+    height: 90vh;
+    width: 70vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.contacts > form{
+    width: 60%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem ;
+}
+form > *{
+    font-size: 1.1rem;
+    margin: .2rem;
+    outline: none;
+}
+form > label{
+    font-size: 1.2rem;
+    font-family: inherit;
+    letter-spacing: .4px;
+}
+form > input[type="text"]{
+    font-family: inherit;
+    padding: .1rem 0;
+    padding-left:.6rem ;
+    letter-spacing: .5px;
+    border:none;
+    border-bottom: 2px solid #744b00;
+    margin-bottom:.5rem ;
+}
+form > input[type="text"]:focus{
+    outline: 2px solid #c9b186;
+    border: none;
+}
+textarea{
+    font-family: inherit;
+    resize: none;
+}
+textarea:focus{
+    outline:3px solid #c9b186; ;
+    border: none;
+}
+.contacts > h1{
+    margin-bottom: 1.4rem;
+    font-size: 2rem;
+    letter-spacing: .2px;
+}
+form > button{
+    display: inline-block;
+    text-decoration: none;
+    background-color: #8a7247 ;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 6px 6px;
+    margin: .4rem auto;
+    width: 30%;
+    max-width: 100px;
+    border-radius: 4px;
+    transition: background-color .2s ease-in-out;
+}
+form > button:hover{
+    background-color: #332b1f;  
+}
+.develop{
+    height: 76vh;
+    justify-content: space-between;
+    margin-bottom: 25vh;
+}
+footer{
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.4rem;
+    color: white;
+    background-color: rgb(49, 49, 49);
+}
+footer a{
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: rgb(126, 240, 255);
+}
+@media screen and  (max-width: 1000px){
+    nav ul{
+        width: 60%;
+    }
+    .card{
+        width: 78vw;
+        margin: .3rem .5rem;
+    }
+    .card img{
+        height: 250px;
+    }
+    .card .info{
+        font-size: 1.5rem;
+    }
+}
+@media screen and  (max-width: 800px){
+    nav ul{
+        width: 65%;
+    }
+    .intro-card > .greet{
+        margin-bottom: 1.6rem;
+        line-height: 1.4;
+    }
+    .contacts, .teaching , .design, .develop{
+        height: 85vh;
+        width: 96vw;
+    }
+    .develop-writing > p, .design-writing > p, .teaching-writing > p{
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+}
+@media screen and  (max-width: 600px){
+    .logo{
+        font-size: 2.2rem;
+    }
+    nav ul{
+       display: none;
+    }
+    .mobile-nav{
+        position: absolute;
+        right: 0;
+        height: 40vh;
+        width: 35vw;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(253, 253, 253);
+        z-index: 9;
+        transform: translateX(100%);
+        transition: transform .3s ease-in-out;
+    }
+    .mobile-nav > ul{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        list-style-type: none;
+    }
+    .mobile-nav > ul > li > a{
+        font-family: inherit;
+        font-weight: 500;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+    .mobile-nav.active{
+        transform: translateX(0%);
+    }
+    .burger{
+        display: flex;
+    }
+    .card{
+        width: 90vw;
+        top: 20%;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: .6rem 1.2rem;
+        border-radius: .6rem;
+    }
+    .card > .intro-card{
+        text-align: center;
+        width: 80%;
+    }
+    .intro-card > .greet{
+        font-size: 2rem;
+        min-height: 2rem;
+        margin-bottom: 1rem;
+        letter-spacing: 1.2px;
+    }
+    .info{
+        text-align: left;
+        font-size: 1.2rem;
+        line-height: 1.2;
+        padding-bottom:.6rem ;
+    }
+    .infoup, .infodown{
+        display: inline-block;
+    }
+    .card > img{
+        width: 44%;
+        min-width: 180px;
+        height: 176px;
+        margin: .8rem auto;
+    }
+    .contacts, .teaching , .design, .develop{
+        height: 92vh;
+        width: 98vw;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        padding: 1.6rem;
+        border-radius: .6rem;
+        margin-bottom: 20vh;
+    }
+    .contacts > form{
+        width: 90%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem ;
+    }
+    .teaching-img, .design-img, .develop-img{
+        width: 80%;
+        height: 50%;
+        margin: .8rem auto ;
+    }
+    .teaching-writing, .design-writing, .develop-writing{
+        align-self: center;
+        width: 98%;
+        margin: .8rem auto;   
+    }
+    .design-img{
+        margin-top:0;
+    }
+    .highlight{
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .icons{
+        font-size: 2rem;
+        margin-top: 1rem; 
+    }
+}
